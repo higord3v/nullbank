@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class CustomerNotFoundException extends Exception {
 
     public CustomerNotFoundException(String cpf) {
-        super(String.format("O cliente com cpf %s nao foi encontrado", cpf));
+        super(String.format("O cliente com CPF %s não foi encontrado", cpf));
     }
 
 }

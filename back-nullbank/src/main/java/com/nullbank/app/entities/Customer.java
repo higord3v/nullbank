@@ -1,11 +1,13 @@
 package com.nullbank.app.entities;
 
+import com.nullbank.app.enums.RelationshipEnum;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
@@ -37,18 +39,22 @@ public class Customer {
 
     @NotNull(message = "O rendimento mensal é obrigatório")
     @Column(name = "monthly_income")
-    private Integer monthly_income;
+    private BigDecimal monthly_income;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Loan> loans;
 
+    @Column(name = "relationship")
+    @NotNull(message = "O relacionamento é obrigatório")
+    private RelationshipEnum relationship;
 
-    public Customer(String name, String cpf, String phone, Integer monthly_income, List<Address> addresses) {
+    public Customer(String name, String cpf, String phone, BigDecimal monthly_income, List<Address> addresses, RelationshipEnum relationship) {
         this.name = name;
         this.cpf = cpf;
         this.phone = phone;
         this.monthly_income = monthly_income;
         this.addresses = addresses;
+        this.relationship = relationship;
     }
 
     public Customer() {
@@ -95,11 +101,39 @@ public class Customer {
         this.phone = phone;
     }
 
-    public Integer getMonthly_income() {
+    public BigDecimal getMonthly_income() {
         return monthly_income;
     }
 
-    public void setMonthly_income(Integer monthly_income) {
+    public void setMonthly_income(BigDecimal monthly_income) {
         this.monthly_income = monthly_income;
+    }
+
+    public List<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
+    }
+
+    public List<Loan> getLoans() {
+        return loans;
+    }
+
+    public void setLoans(List<Loan> loans) {
+        this.loans = loans;
+    }
+
+    public RelationshipEnum getRelationship() {
+        return this.relationship;
+    }
+
+    public void setRelationship(RelationshipEnum relationship) {
+        this.relationship = relationship;
+    }
+
+    public BigDecimal calculateLoan(BigDecimal initialValue, int loansAmount) {
+        return this.relationship.calculateLoan(initialValue, loansAmount);
     }
 }

@@ -1,15 +1,29 @@
 package com.nullbank.app.dtos;
 
+import com.nullbank.app.enums.RelationshipEnum;
+
+import java.math.BigDecimal;
+
 public class CreateCustomerDTO {
     private String name;
     private String cpf;
-    private Integer monthly_income;
+    private BigDecimal monthly_income;
     private String street;
     private Integer address_number;
     private String cep;
     private String phone;
+    private RelationshipEnum relationship;
 
-    public CreateCustomerDTO(String name, String cpf, Integer monthly_income, String street, Integer address_number, String cep, String phone) {
+    public CreateCustomerDTO(
+            String name,
+            String cpf,
+            BigDecimal monthly_income,
+            String street,
+            Integer address_number,
+            String cep,
+            String phone,
+            RelationshipEnum relationship
+    ) {
         this.name = name;
         this.cpf = cpf;
         this.monthly_income = monthly_income;
@@ -17,6 +31,7 @@ public class CreateCustomerDTO {
         this.address_number = address_number;
         this.cep = cep;
         this.phone = phone;
+        this.relationship = relationship;
     }
 
     public String getName() {
@@ -35,11 +50,11 @@ public class CreateCustomerDTO {
         this.cpf = cpf;
     }
 
-    public Integer getMonthly_income() {
+    public BigDecimal getMonthly_income() {
         return monthly_income;
     }
 
-    public void setMonthly_income(Integer monthly_income) {
+    public void setMonthly_income(BigDecimal monthly_income) {
         this.monthly_income = monthly_income;
     }
 
@@ -73,5 +88,13 @@ public class CreateCustomerDTO {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public RelationshipEnum getRelationship() {
+        return relationship;
+    }
+
+    public void setRelationship(RelationshipEnum relationship) {
+        this.relationship = relationship;
     }
 }

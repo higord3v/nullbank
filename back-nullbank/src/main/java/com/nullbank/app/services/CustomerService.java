@@ -57,7 +57,8 @@ public class CustomerService {
                     dto.getCpf(),
                     dto.getPhone(),
                     dto.getMonthly_income(),
-                    customerAddresses
+                    customerAddresses,
+                    dto.getRelationship()
             );
 
             newAddress.setCustomer(newCustomer);
