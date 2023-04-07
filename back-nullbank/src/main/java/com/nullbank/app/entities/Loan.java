@@ -14,7 +14,7 @@ public class Loan {
     private long id;
 
     @ManyToOne
-    @JoinColumn(name = "customer_cpf")
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
     @Column(name = "initial_amount")
