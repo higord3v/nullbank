@@ -1,0 +1,30 @@
+<div class="table-responsive">
+<table class="table table-dark table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col" style="text-align: center">CPF</th>
+      <th scope="col" style="text-align: center">Nome</th>
+      <th scope="col" style="text-align: center">Renda Mensal</th>
+      <th scope="col" style="text-align: center">Telefone</th>
+      <th scope="col" style="text-align: center">Ações</th>
+  </tr>
+</thead>
+<tbody class="table-group-divider">
+  <tr *ngFor="let customer of customers">
+    <th class="align-middle" scope="row" style="text-align: center">{{ customer.cpf}}</th>
+    <td class="align-middle" style="text-align: center">{{ customer.name}}</td>
+    <td class="align-middle" style="text-align: center">{{ customer.monthly_income | currency: 'BRL '}}</td>
+    <td class="align-middle" style="text-align: center">{{ customer.phone}}</td>
+    <td>
+      <div class="align-middle d-flex justify-content-center gap-2">
+
+        <a class="btn btn-success align-middle" [routerLink]="customer.cpf">
+          Editar
+        </a>
+        <button (click)="deleteCustomer(customer.cpf)" class="btn btn-danger align-middle">Deletar</button>
+      </div>
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
