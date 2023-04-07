@@ -11,11 +11,12 @@ Para começar com este projeto, siga os seguintes passos:
 2.  Certifique-se de ter o seguinte software instalado em sua máquina:
     -   Java 11 ou superior
     -   Node.js e NPM
+    -   Maven
 3.  Abra uma janela do terminal e navegue até o diretório raiz do projeto.
 4.  Execute o seguinte comando para iniciar o backend do SpringBoot:
     
     
-    `./mvnw spring-boot:run` 
+    `mvn spring-boot:run` 
     
 5.  Abra outra janela do terminal e navegue até o diretório "frontend".
 6.  Execute o seguinte comando para instalar as dependências necessárias para o frontend do Angular:
