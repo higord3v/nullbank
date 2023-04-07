@@ -56,7 +56,6 @@ O código do backend está organizado nos seguintes componentes:
 -   **Customer**: Esta classe representa um cliente no banco de dados.
 -   **CustomerRepository**: Esta interface define métodos para interagir com o banco de dados.
 -   **CustomerController**: Esta classe fornece endpoints RESTful para operações CRUD em clientes.
-- **CustomerController**: Esta classe fornece endpoints RESTful para operações CRUD em clientes.
 -   **Loan**: Esta classe representa um empréstimo no banco de dados.
 - **LoanRepository**: Esta interface define métodos para interagir com o banco de dados.
 - **LoanController**: Esta classe fornece endpoints RESTful para operações CRUD em empréstimos.
