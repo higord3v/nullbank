@@ -38,7 +38,7 @@ public class Customer {
     private String phone;
 
     @NotNull(message = "O rendimento mensal é obrigatório")
-    @Column(name = "monthly_income")
+    @Column(name = "monthly_income", nullable = false)
     private BigDecimal monthly_income;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
