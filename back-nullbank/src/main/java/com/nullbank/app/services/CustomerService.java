@@ -114,9 +114,9 @@ public class CustomerService {
             throw new CustomerNotFoundException(cpf);
         }
 
-        Customer cpfArealdyRegistered = this.customerRepository.findByCpf(dto.getCpf());
+        Customer cpfAlreadyRegistered = this.customerRepository.findByCpf(dto.getCpf());
 
-        if (cpfArealdyRegistered != null && cpfArealdyRegistered.getCpf() != customer.getCpf()) {
+        if (cpfAlreadyRegistered != null && cpfAlreadyRegistered.getCpf() != customer.getCpf()) {
             throw new CpfAlreadyExistsException(cpf);
         }
 
