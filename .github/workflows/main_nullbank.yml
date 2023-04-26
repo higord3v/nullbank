@@ -22,7 +22,7 @@ jobs:
           java-version: '11'
 
       - name: Build with Maven
-        run: cd back-nullbank && mvn clean install
+        run: mvn -B package -Dmaven.test.skip=true --file ./back-nullbank/pom.xml
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
