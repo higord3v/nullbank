@@ -1,5 +1,5 @@
 
-# Nullbank: Angular + SpringBoot CRUD de Clientes
+# Nullbank: Angular + SpringBoot
 
 Este projeto demonstra como construir uma aplicação web básica de CRUD (Create, Read, Update, Delete) utilizando Angular como framework de frontend e SpringBoot como framework de backend. A aplicação permite que usuários gerenciem dados de clientes realizando operações CRUD em um banco de dados.
 
