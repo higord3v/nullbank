@@ -4,8 +4,4 @@ VOLUME /tmp
 
 EXPOSE 8080
 
-ARG JAR_FILE=target/back-nullbank-0.0.1-SNAPSHOT.jar
-
-ADD ${JAR_FILE} app.jar
-
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","/back-nullbank-0.0.1-SNAPSHOT.jar"]
