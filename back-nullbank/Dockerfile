@@ -1,7 +1,5 @@
-FROM openjdk:11
-
+FROM openjdk:11-jdk
+WORKDIR /app
+COPY target/back-nullbank-0.0.1-SNAPSHOT.jar /app/app.jar
 EXPOSE 8080
-
-COPY . .
-
-ENTRYPOINT ["java","-jar","/target/back-nullbank-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
