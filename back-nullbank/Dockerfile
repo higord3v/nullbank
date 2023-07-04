@@ -1,9 +1,9 @@
 FROM openjdk:11-jdk
 
-WORKDIR /home/user/app/
+ARG JAR_FILE=target/*.jar
 
-COPY target/back-nullbank-0.0.1-SNAPSHOT.jar /home/user/app/
+COPY ${JAR_FILE} app.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "back-nullbank-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
