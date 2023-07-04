@@ -1,9 +1,9 @@
-FROM openjdk:11-jdk
+FROM eclipse-temurin:17
 
-ARG JAR_FILE=target/*.jar
+LABEL mentainer="higord3v"
 
-COPY ${JAR_FILE} app.jar
+WORKDIR /app
 
-EXPOSE 8080
+COPY target/back-nullbank-0.0.1-SNAPSHOT.jar /app/back-nullbank-0.0.1-SNAPSHOT.jar
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "back-nullbank-0.0.1-SNAPSHOT.jar"]
