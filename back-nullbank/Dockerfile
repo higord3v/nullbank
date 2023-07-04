@@ -1,3 +1,11 @@
 FROM openjdk:11
-COPY target/back-nullbank-0.0.1-SNAPSHOT.jar server-1.0.0.jar
-ENTRYPOINT ["java","-jar","/server-1.0.0.jar"]
+
+VOLUME /tmp
+
+EXPOSE 8080
+
+ARG JAR_FILE=target/back-nullbank-0.0.1-SNAPSHOT.jar
+
+ADD ${JAR_FILE} app.jar
+
+ENTRYPOINT ["java","-jar","/app.jar"]
