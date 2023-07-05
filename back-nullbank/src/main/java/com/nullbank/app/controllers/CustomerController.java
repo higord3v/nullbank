@@ -5,10 +5,10 @@ import com.nullbank.app.dtos.CreatedCustomerDTO;
 import com.nullbank.app.exceptions.CpfAlreadyExistsException;
 import com.nullbank.app.exceptions.CustomerNotFoundException;
 import com.nullbank.app.services.CustomerService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
