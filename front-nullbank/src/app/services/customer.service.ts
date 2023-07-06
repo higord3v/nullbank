@@ -1,23 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments';
+import { environment } from '../../environments/environment';
 import { ICustomer } from '../interfaces/customer';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CustomerService {
-
-  uri = "clientes";
-  api = environment.api;
-  constructor(private http: HttpClient) { }
+  uri = 'clientes';
+  api = environment.apiUrl;
+  constructor(private http: HttpClient) {}
 
   findAllCustomers() {
     return this.http.get<ICustomer[]>(`${this.api}/${this.uri}`);
   }
 
   register(customer: ICustomer) {
-    return this.http.post(`${this.api}/${this.uri}`, customer)
+    return this.http.post(`${this.api}/${this.uri}`, customer);
   }
 
   findByCpf(cpf: string) {
