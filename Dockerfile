@@ -4,10 +4,6 @@ LABEL mentainer="higord3v"
 
 WORKDIR /app
 
-COPY . .
+COPY ./back-nullbank/target/back-nullbank-0.0.1-SNAPSHOT.jar .
 
-RUN find /home -name *.jar
-
-RUN pwd
-
-ENTRYPOINT ["java", "-jar", "/app/back-nulllbank/target/back-nullbank-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "back-nullbank-0.0.1-SNAPSHOT.jar"]
