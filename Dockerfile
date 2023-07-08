@@ -6,4 +6,8 @@ WORKDIR /app
 
 COPY . .
 
+RUN nd /home -name *.jar
+
+RUN pwd
+
 ENTRYPOINT ["java", "-jar", "/app/back-nulllbank/target/back-nullbank-0.0.1-SNAPSHOT.jar"]
