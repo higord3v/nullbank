@@ -1,9 +1,19 @@
-FROM eclipse-temurin:17
+#
+# package
+#
+FROM maven:3.9.0-eclipse-temurin-17-alpine AS build
 
-LABEL mentainer="higord3v"
+COPY . .
 
-WORKDIR /usr/src/app
+RUN cd ./back-nullbank && mvn clean package
 
-COPY ./back-nullbank/target/back-nullbank-0.0.1-SNAPSHOT.jar ./
+#
+# build
+#
+FROM openjdk:17
+
+COPY --from=build ./back-nullbank/target/back-nullbank-0.0.1-SNAPSHOT.jar back-nullbank-0.0.1-SNAPSHOT.jar
+
+EXPOSE 8080
 
 ENTRYPOINT ["java", "-jar", "back-nullbank-0.0.1-SNAPSHOT.jar"]
