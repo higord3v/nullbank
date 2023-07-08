@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN nd /home -name *.jar
+RUN find /home -name *.jar
 
 RUN pwd
 
