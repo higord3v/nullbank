@@ -6,4 +6,4 @@ WORKDIR /app
 
 COPY . .
 
-ENTRYPOINT ["java", "-jar", "/back-nulllbank/target/back-nullbank-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "/app/back-nulllbank/target/back-nullbank-0.0.1-SNAPSHOT.jar"]
